@@ -6,8 +6,13 @@
     <title>Pictionnary - Inscription</title>
 </head>
 <body>
-
+<?php include("header.php"); ?>
 <h2>Inscrivez-vous</h2>
+<?php
+if (isset($_GET["erreur"])) {
+    echo "<div><span>".$_GET["erreur"]."</span></div>";
+}
+?>
 <form class="inscription" action="req_inscription.php" method="post" name="inscription">
     <!-- c'est quoi les attributs action et method ?
     action : page vers laquelle le visiteur sera redirigé après envoi du formulaire et qui traitera les informations
@@ -31,7 +36,11 @@
         </li>
         <li>
             <label for="prenom">Prénom :</label>
-            <input type="text" name="prenom" id="prenom" placeholder="Entrer votre prénom" required />
+            <input type="text" name="prenom" id="prenom" value="<?php
+            if (isset($_GET["prenom"])) {
+            echo $_GET["prenom"];
+            }
+            ?>" placeholder="Entrer votre prénom" required />
             <!-- ajouter à input l'attribut qui dit que c'est un champs obligatoire -->
             <!-- ajouter à input l'attribut qui donne une indication grisée (placeholder) -->
         </li>
@@ -61,7 +70,11 @@
         </li>
         <li>
             <label for="birthdate">Date de naissance :</label>
-            <input type="date" name="birthdate" id="birthdate" placeholder="JJ/MM/AAAA" required onchange="computeAge()"/>
+            <input type="date" name="birthdate" id="birthdate" value="<?php
+            if (isset($_GET["birthdate"])) {
+            echo $_GET["birthdate"];
+            }
+            ?>" placeholder="JJ/MM/AAAA" required onchange="computeAge()"/>
             <script>
                 computeAge = function(e) {
                     try{
