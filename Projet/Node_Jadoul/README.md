@@ -25,6 +25,9 @@ Concepts à mettre ne œuvre :
 
 [![Github](https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png)](https://github.com/kbouzidi/lpsil)
 
+#### Base de données 
+importer le fichier pictionnary.sql dans votre base de données
+
 #### Structure du projet
 ```
 lpsil-web/
